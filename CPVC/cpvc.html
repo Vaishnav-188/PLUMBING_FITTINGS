@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CPVC ITEMS LIST</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.28/jspdf.plugin.autotable.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            font-family: Arial;
+            padding: 20px;
+        }
+        .item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            margin-bottom: 8px;
+            background: #f7f7f7;
+            padding: 10px;
+            border-radius: 6px;
+        }
+        .item span {
+            flex: 1;
+        }
+        .item div {
+            display: flex;
+            gap: 10px;
+        }
+        .item-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            padding: 12px;
+            flex-wrap: wrap;
+        }
+
+
+        button {
+            padding: 5px 12px;
+            border: none;
+            background: green;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .minus-btn {
+            background: rgb(255, 81, 0);
+            margin-left: 5px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 8px;
+        }
+
+        #downloadBtn {
+            background: red;
+            margin-top: 20px;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+
+<h2>CPVC FITTINGS LIST</h2>
+
+<label><b>SELECT BRAND:</b></label>
+<select id="brandSelect">
+    <option value="Finolex">Finolex</option>
+    <option value="Supreme">Supreme</option>
+</select>
+
+<br><br>
+
+<!-- ALL ITEMS CORRECTED BELOW -->
+
+<div class="item">
+    <span>3/4" CPVC PIPE SDR-11 (5M)</span>
+    <div>
+        <button onclick="addItem('3/4\'\' CPVC PIPE SDR-11 (5M)')">+</button>
+        <button class="minus-btn" onclick="removeItem('3/4\'\' CPVC PIPE SDR-11 (5M)')">-</button>
+    </div>
+</div>
+
+<div class="item">
+    <span>3/4" CPVC PIPE SDR-11 (3M)</span>
+    <div>
+        <button onclick="addItem('3/4\'\' CPVC PIPE SDR-11 (3M)')">+</button>
+        <button class="minus-btn" onclick="removeItem('3/4\'\' CPVC PIPE SDR-11 (3M)')">-</button>
+    </div>
+</div>
+
+<div class="item">
+    <span>3/4" X 1/2" CPVC BRASS THREADED ELBOW</span>
+    <div>
+        <button onclick="addItem('3/4&quot X1/2&quot CPVC BRASS THREADED ELBOW')">+</button>
+        <button class="minus-btn" onclick="removeItem('3/4&quot X1/2&quot CPVC BRASS THREADED ELBOW')">-</button>
+    </div>
+</div>
+
+<div class="item">
+    <span>3/4" X 1/2" CPVC THREADED REDUCER</span>
+    <div>
+        <button onclick="addItem('3/4&quot x 1/2&quot CPVC THREADED REDUCER')">+</button>
+        <button class="minus-btn" onclick="removeItem('3/4&quot x 1/2&quot CPVC THREADED REDUCER')">-</button>
+    </div>
+</div>
+
+<div class="item">
+    <span>3/4" X 1/2" CPVC THREADED TEE</span>
+    <div>
+        <button onclick="addItem('3/4&quot X 1/2&quot CPVC THREADED TEE')">+</button>
+        <button class="minus-btn" onclick="removeItem('3/4&quot X 1/2&quot CPVC THREADED TEE')">-</button>
+    </div>
+</div>
+
+<div class="item">
+    <span>3/4" X 1/2" CPVC BRASS MTA</span>
+    <div>
+        <button onclick="addItem('3/4&quot X1/2&quot CPVC BRASS MTA')">+</button>
+        <button class="minus-btn" onclick="removeItem('3/4&quot X1/2&quot CPVC BRASS MTA')">-</button>
+    </div>
+</div>
+
+<div class="item">
+    <span>3/4" CPVC BRASS MTA</span>
+    <div>
+        <button onclick="addItem('3/4&quot CPVC BRASS MTA')">+</button>
+        <button class="minus-btn" onclick="removeItem('3/4&quot CPVC BRASS MTA')">-</button>
+    </div>
+</div>
+
+<div class="item">
+    <span>3/4" CPVC MTA</span>
+    <div>
+        <button onclick="addItem('3/4&quot CPVC MTA')">+</button>
+        <button class="minus-btn" onclick="removeItem('3/4&quot CPVC MTA')">-</button>
+    </div>
+</div>
+
+<div class="item">
+    <span>3/4" CPVC ELBOW</span>
+    <div>
+        <button onclick="addItem('3/4&quot CPVC ELBOW')">+</button>
+        <button class="minus-btn" onclick="removeItem('3/4&quot CPVC ELBOW')">-</button>
+    </div>
+</div>
+
+<div class="item">
+    <span>3/4" CPVC TEE</span>
+    <div>
+        <button onclick="addItem('3/4&quot CPVC TEE')">+</button>
+        <button class="minus-btn" onclick="removeItem('3/4&quot CPVC TEE')">-</button>
+    </div>
+</div>
+
+<div class="item">
+    <span>3/4" CPVC SHOE</span>
+    <div>
+        <button onclick="addItem('3/4&quot CPVC SHOE')">+</button>
+        <button class="minus-btn" onclick="removeItem('3/4&quot CPVC SHOE')">-</button>
+    </div>
+</div>
+
+<div class="item">
+    <span>3/4" CPVC STEPOVER BEND</span>
+    <div>
+        <button onclick="addItem('3/4&quot CPVC STEPOVER BEND')">+</button>
+        <button class="minus-btn" onclick="removeItem('3/4&quot CPVC STEPOVER BEND')">-</button>
+    </div>
+</div>
+
+<div class="item">
+    <span>3/4" CPVC UNION</span>
+    <div>
+        <button onclick="addItem('3/4&quot CPVC UNION')">+</button>
+        <button class="minus-btn" onclick="removeItem('3/4&quot CPVC UNION')">-</button>
+    </div>
+</div>
+
+<!-- FIXED BOTTOM ITEMS -->
+
+<div class="item">
+    <span>3/4" CPVC DUMMY</span>
+    <div>
+        <button onclick="addItem('3/4&quot CPVC DUMMY')">+</button>
+        <button class="minus-btn" onclick="removeItem('3/4&quot CPVC DUMMY')">-</button>
+    </div>
+</div>
+
+<div class="item">
+    <span>3/4" CPVC CLAMP</span>
+    <div>
+        <button onclick="addItem('3/4&quot CPVC CLAMP')">+</button>
+        <button class="minus-btn" onclick="removeItem('3/4&quot CPVC CLAMP')">-</button>
+    </div>
+</div>
+
+<div class="item">
+    <span>3/4" CPVC STEPCLAMP</span>
+    <div>
+        <button onclick="addItem('3/4&quot CPVC STEPCLAMP')">+</button>
+        <button class="minus-btn" onclick="removeItem('3/4&quot CPVC STEPCLAMP')">-</button>
+    </div>
+</div>
+
+<div class="item">
+    <span>3/4" CPVC CONCEALED STOPCOCK</span>
+    <div>
+        <button onclick="addItem('3/4&quot CPVC CONCEALED STOPCOCK')">+</button>
+        <button class="minus-btn" onclick="removeItem('3/4&quot CPVC CONCEALED STOPCOCK')">-</button>
+    </div>
+</div>
+
+<div class="item">
+    <span>3/4" CPVC BALL VALVE</span>
+    <div>
+        <button onclick="addItem('3/4&quot CPVC BALL VALVE')">+</button>
+        <button class="minus-btn" onclick="removeItem('3/4&quot CPVC BALL VALVE')">-</button>
+    </div>
+</div>
+
+<div class="item">
+    <span>3/4" CPVC CUPLING</span>
+    <div>
+        <button onclick="addItem('3/4&quot CPVC CUPLING')">+</button>
+        <button class="minus-btn" onclick="removeItem('3/4&quot CPVC CUPLING')">-</button>
+    </div>
+</div>
+
+<div class="item">
+    <span>3/4" X 3/4" CONVECTION BUSH</span>
+    <div>
+        <button onclick="addItem('3/4&quot X 3/4&quot CONVECTION BUSH')">+</button>
+        <button class="minus-btn" onclick="removeItem('3/4&quot X 3/4&quot CONVECTION BUSH')">-</button>
+    </div>
+</div>
+
+<h3>SELECTED ITEMS</h3>
+
+<table id="outputTable">
+    <thead>
+        <tr>
+            <th>S.NO</th>
+            <th>ITEM NAME</th>
+            <th>QUANTITY</th>
+            <th>BRAND</th>
+        </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+
+<button id="downloadBtn" onclick="downloadPDF()">Download PDF</button>
+
+<script>
+
+let list = [];
+
+function addItem(name) {
+    let brand = document.getElementById("brandSelect").value;
+    let existing = list.find(x => x.name === name && x.brand === brand);
+
+    if (existing) existing.qty += 1;
+    else list.push({ name, qty: 1, brand });
+
+    renderTable();
+}
+
+function removeItem(name) {
+    let brand = document.getElementById("brandSelect").value;
+    let existing = list.find(x => x.name === name && x.brand === brand);
+
+    if (existing) {
+        existing.qty -= 1;
+        if (existing.qty <= 0) {
+            list = list.filter(x => !(x.name === name && x.brand === brand));
+        }
+    }
+    renderTable();
+}
+
+function renderTable() {
+    const tbody = document.querySelector("#outputTable tbody");
+    tbody.innerHTML = "";
+
+    list.forEach((item, index) => {
+        tbody.innerHTML += `
+            <tr>
+                <td>${index + 1}</td>
+                <td>${item.name}</td>
+                <td>${item.qty}</td>
+                <td>${item.brand}</td>
+            </tr>
+        `;
+    });
+}
+
+function downloadPDF() {
+    const { jsPDF } = window.jspdf;
+    var doc = new jsPDF();
+
+    doc.setFontSize(16);
+    doc.text("PLUMBING FITTINGS - CPVC ITEMS", 14, 20);
+
+    if (list.length === 0) {
+        doc.text("S. ANBALAGAN", 14, 40);
+        doc.text("9842513183", 14, 48);
+        doc.save("CPVC_LIST.pdf");
+        return;
+    }
+
+    doc.autoTable({
+        startY: 30,
+        head: [['S.NO', 'ITEM NAME', 'QTY', 'BRAND']],
+        body: list.map((row, i) => [i + 1, row.name, row.qty, row.brand]),
+        theme: 'grid'
+    });
+
+    let finalY = doc.lastAutoTable.finalY + 20;
+
+    doc.setFontSize(12);
+    doc.text("S. ANBALAGAN", 14, finalY);
+    doc.text("9842513183", 14, finalY + 8);
+
+    doc.save("CPVC_LIST.pdf");
+}
+
+</script>
+
+</body>
+</html>
