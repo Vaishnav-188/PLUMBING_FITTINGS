@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>1" UPVC ITEMS LIST</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.28/jspdf.plugin.autotable.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            font-family: Arial;
+            padding: 20px;
+        }
+        .item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            margin-bottom: 8px;
+            background: #f7f7f7;
+            padding: 10px;
+            border-radius: 6px;
+        }
+        .item span {
+            flex: 1;
+        }
+        .item div {
+            display: flex;
+            gap: 10px;
+        }
+        .item-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            padding: 12px;
+            flex-wrap: wrap;
+        }
+
+
+        button {
+            padding: 5px 12px;
+            border: none;
+            background: green;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .minus-btn {
+            background: rgb(255, 81, 0);
+            margin-left: 5px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 8px;
+        }
+
+        #downloadBtn {
+            background: red;
+            margin-top: 20px;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+
+<h2>1" UPVC FITTINGS LIST</h2>
+
+<label><b>SELECT BRAND:</b></label>
+<select id="brandSelect">
+    <option value="Finolex">Finolex</option>
+    <option value="Supreme">Supreme</option>
+</select>
+
+<br><br>
+
+<!-- ALL ITEMS CORRECTED BELOW -->
+
+<div class="item">
+    <span>1" UPVC PIPE</span>
+    <div>
+        <button onclick="addItem('1&quot UPVC PIPE')">+</button>
+        <button class="minus-btn" onclick="removeItem('1&quot UPVC PIPE')">-</button>
+    </div>
+</div>
+
+<div class="item">
+    <span>1" UPVC ELBOW</span>
+    <div>
+        <button onclick="addItem('1&quot UPVC ELBOW')">+</button>
+        <button class="minus-btn" onclick="removeItem('1&7quot UPVC ELBOW')">-</button>
+    </div>
+</div>
+
+<div class="item">
+    <span>1" UPVC TEE </span>
+    <div>
+        <button onclick="addItem('1&quot UPVC TEE ')">+</button>
+        <button class="minus-btn" onclick="removeItem('1&quot UPVC TEE ')">-</button>
+    </div>
+</div>
+
+<div class="item">
+    <span>1" UPVC CUPLING</span>
+    <div>
+        <button onclick="addItem('1&quot UPVC CUPLING')">+</button>
+        <button class="minus-btn" onclick="removeItem('1&quot UPVC CUPLING')">-</button>
+    </div>
+</div>
+
+<div class="item">
+    <span>1" UPVC UNION </span>
+    <div>
+        <button onclick="addItem('1&quot UPVC UNION ')">+</button>
+        <button class="minus-btn" onclick="removeItem('1&quot UPVC UNION ')">-</button>
+    </div>
+</div>
+
+<div class="item">
+    <span>1" UPVC MTA </span>
+    <div>
+        <button onclick="addItem('1&quot UPVC MTA ')">+</button>
+        <button class="minus-btn" onclick="removeItem('1&quot UPVC MTA ')">-</button>
+    </div>
+</div>
+
+<div class="item">
+    <span>1" UPVC FTA</span>
+    <div>
+        <button onclick="addItem('1&quot UPVC FTA')">+</button>
+        <button class="minus-btn" onclick="removeItem('3/4&quot CPVC BRASS MTA')">-</button>
+    </div>
+</div>
+
+<div class="item">
+    <span>1" UPVC SHOE </span>
+    <div>
+        <button onclick="addItem('1&quot UPVC SHOE ')">+</button>
+        <button class="minus-btn" onclick="removeItem('1&quot UPVC SHOE ')">-</button>
+    </div>
+</div>
+
+<div class="item">
+    <span>1" UPVC BALL VALVE </span>
+    <div>
+        <button onclick="addItem('1&quot UPVC BALL VALVE ')">+</button>
+        <button class="minus-btn" onclick="removeItem('1&quot UPVC BALL VALVE ')">-</button>
+    </div>
+</div>
+
+<div class="item">
+    <span>1" UPVC STEPCLAMP </span>
+    <div>
+        <button onclick="addItem('1&quot UPVC STEPCLAMP ')">+</button>
+        <button class="minus-btn" onclick="removeItem('1&quot UPVC STEPCLAMP ')">-</button>
+    </div>
+</div>
+
+<div class="item">
+    <span>1" UPVC CLAMP</span>
+    <div>
+        <button onclick="addItem('1&quot UPVC CLAMP')">+</button>
+        <button class="minus-btn" onclick="removeItem('1&quot UPVC CLAMP')">-</button>
+    </div>
+</div>
+
+<div class="item">
+    <span>1" UPVC DUMMY </span>
+    <div>
+        <button onclick="addItem('1&quot UPVC DUMMY ')">+</button>
+        <button class="minus-btn" onclick="removeItem('1&quot UPVC DUMMY ')">-</button>
+    </div>
+</div>
+
+<div class="item">
+    <span>1" UPVC BRASS MTA</span>
+    <div>
+        <button onclick="addItem('1&quot UPVC BRASS MTA')">+</button>
+        <button class="minus-btn" onclick="removeItem('1&quot UPVC BRASS MTA')">-</button>
+    </div>
+</div>
+
+<div class="item">
+    <span>1" PVC FOOT VALVE</span>
+    <div>
+        <button onclick="addItem('1&quot PVC FOOT VALVE')">+</button>
+        <button class="minus-btn" onclick="removeItem('1&quot PVC FOOT VALVE')">-</button>
+    </div>
+</div>
+
+<div class="item">
+    <span>1" BRASS FLOATVALVE</span>
+    <div>
+        <button onclick="addItem('1&quot BRASS FLOATVALVE')">+</button>
+        <button class="minus-btn" onclick="removeItem('1&quot BRASS FLOATVALVE')">-</button>
+    </div>
+</div>
+
+<div class="item">
+    <span>1" BRASS NRV(HORIZONTAL)</span>
+    <div>
+        <button onclick="addItem('1&quot BRASS NRV(HORIZONTAL)')">+</button>
+        <button class="minus-btn" onclick="removeItem('1&quot BRASS NRV(HORIZONTAL)')">-</button>
+    </div>
+</div>
+
+<div class="item">
+    <span>1" BRASS NRV(VERTICAL)</span>
+    <div>
+        <button onclick="addItem('1&quot BRASS NRV(VERTICAL)')">+</button>
+        <button class="minus-btn" onclick="removeItem('1&quot BRASS NRV(VERTICAL)')">-</button>
+    </div>
+</div>
+
+<div class="item">
+    <span>1" UPVC TANKNIPPLE</span>
+    <div>
+        <button onclick="addItem('1&quot UPVC TANKNIPPLE')">+</button>
+        <button class="minus-btn" onclick="removeItem('1&quot UPVC TANKNIPPLE')">-</button>
+    </div>
+</div>
+
+<div class="item">
+    <span>1" STAINER </span>
+    <div>
+        <button onclick="addItem('1&quot STAINER ')">+</button>
+        <button class="minus-btn" onclick="removeItem('1&quot STAINER ')">-</button>
+    </div>
+</div>
+
+<div class="item">
+    <span>1" PVC MTA</span>
+    <div>
+        <button onclick="addItem('1&quot PVC MTA')">+</button>
+        <button class="minus-btn" onclick="removeItem('1&quot PVC MTA')">-</button>
+    </div>
+</div>
+<div class="item">
+    <span>1" PVC FTA</span>
+    <div>
+        <button onclick="addItem('1&quot PVC FTA')">+</button>
+        <button class="minus-btn" onclick="removeItem('1&quot PVC FTA')">-</button>
+    </div>
+</div>
+<div class="item">
+    <span>1" PVC ELBOW</span>
+    <div>
+        <button onclick="addItem('1&quot PVC ELBOW')">+</button>
+        <button class="minus-btn" onclick="removeItem('1&quot PVC ELBOW')">-</button>
+    </div>
+</div>
+<div class="item">
+    <span>1" PVC TEE</span>
+    <div>
+        <button onclick="addItem('1&quot PVC TEE')">+</button>
+        <button class="minus-btn" onclick="removeItem('1&quot PVC TEE')">-</button>
+    </div>
+</div>
+<div class="item">
+    <span>1" PVC CUPLING</span>
+    <div>
+        <button onclick="addItem('1&quot PVC CUPLING')">+</button>
+        <button class="minus-btn" onclick="removeItem('1&quot PVC CUPLING')">-</button>
+    </div>
+</div>
+<div class="item">
+    <span>1" PVC DUMMY</span>
+    <div>
+        <button onclick="addItem('1&quot PVC DUMMY')">+</button>
+        <button class="minus-btn" onclick="removeItem('1&quot PVC DUMMY')">-</button>
+    </div>
+</div>
+<div class="item">
+    <span>1" X 3/4" UPVC BUSH</span>
+    <div>
+        <button onclick="addItem('1&quot X 3/4&quot UPVC BUSH')">+</button>
+        <button class="minus-btn" onclick="removeItem('1&quot X 3/4&quot UPVC BUSH')">-</button>
+    </div>
+</div>
+<div class="item">
+    <span>1" X 3/4" UPVC REDUCER </span>
+    <div>
+        <button onclick="addItem('1&quot X 3/4&quot UPVC REDUCER ')">+</button>
+        <button class="minus-btn" onclick="removeItem('1&quot X 3/4&quot UPVC REDUCER ')">-</button>
+    </div>
+</div>
+<div class="item">
+    <span>1" X 1/2" UPVC THREADED ELBOW</span>
+    <div>
+        <button onclick="addItem('1&quot X 1/2&quot UPVC THREADED ELBOW')">+</button>
+        <button class="minus-btn" onclick="removeItem('1&quot X 1/2&quot UPVC THREADED ELBOW')">-</button>
+    </div>
+</div>
+<div class="item">
+    <span>1" X 1/2" UPVC THREADED REDUCER </span>
+    <div>
+        <button onclick="addItem('1&quot X 1/2&quot UPVC THREADED REDUCER ')">+</button>
+        <button class="minus-btn" onclick="removeItem('1&quot X 1/2&quot UPVC THREADED REDUCER ')">-</button>
+    </div>
+</div>
+<div class="item">
+    <span>1" X 1/2" BRASS THREADED TEE</span>
+    <div>
+        <button onclick="addItem('1&quot X 1/2&quot BRASS THREADED TEE')">+</button>
+        <button class="minus-btn" onclick="removeItem('1&quot X 1/2&quot BRASS THREADED TEE')">-</button>
+    </div>
+</div>
+<div class="item">
+    <span>1" SS HOSE CLAMB</span>
+    <div>
+        <button onclick="addItem('1&quot SS HOSE CLAMB')">+</button>
+        <button class="minus-btn" onclick="removeItem('1&quot SS HOSE CLAMB')">-</button>
+    </div>
+</div>
+<div class="item">
+    <span>1" SS HOSE COLLAR</span>
+    <div>
+        <button onclick="addItem('1&quot SS HOSE COLLAR')">+</button>
+        <button class="minus-btn" onclick="removeItem('1&quot SS HOSE COLLAR')">-</button>
+    </div>
+</div>
+<div class="item">
+    <span>1" X 3/4" HOSE COLLAR</span>
+    <div>
+        <button onclick="addItem('1&quot X 3/4&quot HOSE COLLAR')">+</button>
+        <button class="minus-btn" onclick="removeItem('1&quot X 3/4&quot HOSE COLLAR')">-</button>
+    </div>
+</div>
+
+
+
+
+
+
+<h3>SELECTED ITEMS</h3>
+
+<table id="outputTable">
+    <thead>
+        <tr>
+            <th>S.NO</th>
+            <th>ITEM NAME</th>
+            <th>QUANTITY</th>
+            <th>BRAND</th>
+        </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+
+<button id="downloadBtn" onclick="downloadPDF()">Download PDF</button>
+
+<script>
+
+let list = [];
+
+function addItem(name) {
+    let brand = document.getElementById("brandSelect").value;
+    let existing = list.find(x => x.name === name && x.brand === brand);
+
+    if (existing) existing.qty += 1;
+    else list.push({ name, qty: 1, brand });
+
+    renderTable();
+}
+
+function removeItem(name) {
+    let brand = document.getElementById("brandSelect").value;
+    let existing = list.find(x => x.name === name && x.brand === brand);
+
+    if (existing) {
+        existing.qty -= 1;
+        if (existing.qty <= 0) {
+            list = list.filter(x => !(x.name === name && x.brand === brand));
+        }
+    }
+    renderTable();
+}
+
+function renderTable() {
+    const tbody = document.querySelector("#outputTable tbody");
+    tbody.innerHTML = "";
+
+    list.forEach((item, index) => {
+        tbody.innerHTML += `
+            <tr>
+                <td>${index + 1}</td>
+                <td>${item.name}</td>
+                <td>${item.qty}</td>
+                <td>${item.brand}</td>
+            </tr>
+        `;
+    });
+}
+
+function downloadPDF() {
+    const { jsPDF } = window.jspdf;
+    var doc = new jsPDF();
+
+    doc.setFontSize(16);
+    doc.text("PLUMBING FITTINGS -1 INCH UPVC ITEMS", 14, 20);
+
+    if (list.length === 0) {
+        doc.text("S. ANBALAGAN", 14, 40);
+        doc.text("9842513183", 14, 48);
+        doc.save("UPVC 1 inch list.pdf");
+        return;
+    }
+
+    doc.autoTable({
+        startY: 30,
+        head: [['S.NO', 'ITEM NAME', 'QTY', 'BRAND']],
+        body: list.map((row, i) => [i + 1, row.name, row.qty, row.brand]),
+        theme: 'grid'
+    });
+
+    let finalY = doc.lastAutoTable.finalY + 20;
+
+    doc.setFontSize(12);
+    doc.text("S. ANBALAGAN", 14, finalY);
+    doc.text("9842513183", 14, finalY + 8);
+
+    doc.save("1 INCH UPVC_List.pdf");
+}
+
+</script>
+
+</body>
+</html>
