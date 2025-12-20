@@ -11,6 +11,31 @@
             font-family: Arial;
             padding: 20px;
         }
+        
+        .controls {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .controls div {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+        
+        .controls label {
+            font-weight: bold;
+        }
+        
+        .controls input,
+        .controls select {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        
         .item {
             display: flex;
             justify-content: space-between;
@@ -21,22 +46,15 @@
             padding: 10px;
             border-radius: 6px;
         }
+        
         .item span {
             flex: 1;
         }
+        
         .item div {
             display: flex;
             gap: 10px;
         }
-        .item-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 100%;
-            padding: 12px;
-            flex-wrap: wrap;
-        }
-
 
         button {
             padding: 5px 12px;
@@ -57,9 +75,11 @@
             border-collapse: collapse;
             margin-top: 15px;
         }
+        
         table, th, td {
             border: 1px solid black;
         }
+        
         th, td {
             padding: 8px;
         }
@@ -76,15 +96,28 @@
 
 <h2>CPVC FITTINGS LIST</h2>
 
-<label><b>SELECT BRAND:</b></label>
-<select id="brandSelect">
-    <option value="Finolex">Finolex</option>
-    <option value="Supreme">Supreme</option>
-</select>
+<div class="controls">
+    <div>
+        <label for="brand">SELECT BRAND:</label>
+        <select id="brand">
+            <option value="">-- Select Brand --</option>
+            <option>Finolex</option>
+            <option>Astral</option>
+            <option>Ashirvad</option>
+            <option>Supreme</option>
+        </select>
+    </div>
 
-<br><br>
+    <div>
+        <label for="date">SELECT DATE:</label>
+        <input type="date" id="date">
+    </div>
 
-<!-- ALL ITEMS CORRECTED BELOW -->
+    <div>
+        <label for="site">SITE NAME:</label>
+        <input type="text" id="site" placeholder="Enter site name">
+    </div>
+</div>
 
 <div class="item">
     <span>3/4" CPVC PIPE SDR-11 (5M)</span>
@@ -105,146 +138,144 @@
 <div class="item">
     <span>3/4" X 1/2" CPVC BRASS THREADED ELBOW</span>
     <div>
-        <button onclick="addItem('3/4&quot X1/2&quot CPVC BRASS THREADED ELBOW')">+</button>
-        <button class="minus-btn" onclick="removeItem('3/4&quot X1/2&quot CPVC BRASS THREADED ELBOW')">-</button>
+        <button onclick="addItem('3/4 X 1/2 CPVC BRASS THREADED ELBOW')">+</button>
+        <button class="minus-btn" onclick="removeItem('3/4 X 1/2 CPVC BRASS THREADED ELBOW')">-</button>
     </div>
 </div>
 
 <div class="item">
     <span>3/4" X 1/2" CPVC THREADED REDUCER</span>
     <div>
-        <button onclick="addItem('3/4&quot x 1/2&quot CPVC THREADED REDUCER')">+</button>
-        <button class="minus-btn" onclick="removeItem('3/4&quot x 1/2&quot CPVC THREADED REDUCER')">-</button>
+        <button onclick="addItem('3/4 x 1/2 CPVC THREADED REDUCER')">+</button>
+        <button class="minus-btn" onclick="removeItem('3/4 x 1/2 CPVC THREADED REDUCER')">-</button>
     </div>
 </div>
 
 <div class="item">
     <span>3/4" X 1/2" CPVC THREADED TEE</span>
     <div>
-        <button onclick="addItem('3/4&quot X 1/2&quot CPVC THREADED TEE')">+</button>
-        <button class="minus-btn" onclick="removeItem('3/4&quot X 1/2&quot CPVC THREADED TEE')">-</button>
+        <button onclick="addItem('3/4 X 1/2 CPVC THREADED TEE')">+</button>
+        <button class="minus-btn" onclick="removeItem('3/4 X 1/2 CPVC THREADED TEE')">-</button>
     </div>
 </div>
 
 <div class="item">
     <span>3/4" X 1/2" CPVC BRASS MTA</span>
     <div>
-        <button onclick="addItem('3/4&quot X1/2&quot CPVC BRASS MTA')">+</button>
-        <button class="minus-btn" onclick="removeItem('3/4&quot X1/2&quot CPVC BRASS MTA')">-</button>
+        <button onclick="addItem('3/4 X 1/2 CPVC BRASS MTA')">+</button>
+        <button class="minus-btn" onclick="removeItem('3/4 X 1/2 CPVC BRASS MTA')">-</button>
     </div>
 </div>
 
 <div class="item">
     <span>3/4" CPVC BRASS MTA</span>
     <div>
-        <button onclick="addItem('3/4&quot CPVC BRASS MTA')">+</button>
-        <button class="minus-btn" onclick="removeItem('3/4&quot CPVC BRASS MTA')">-</button>
+        <button onclick="addItem('3/4 CPVC BRASS MTA')">+</button>
+        <button class="minus-btn" onclick="removeItem('3/4 CPVC BRASS MTA')">-</button>
     </div>
 </div>
 
 <div class="item">
     <span>3/4" CPVC MTA</span>
     <div>
-        <button onclick="addItem('3/4&quot CPVC MTA')">+</button>
-        <button class="minus-btn" onclick="removeItem('3/4&quot CPVC MTA')">-</button>
+        <button onclick="addItem('3/4 CPVC MTA')">+</button>
+        <button class="minus-btn" onclick="removeItem('3/4 CPVC MTA')">-</button>
     </div>
 </div>
 
 <div class="item">
     <span>3/4" CPVC ELBOW</span>
     <div>
-        <button onclick="addItem('3/4&quot CPVC ELBOW')">+</button>
-        <button class="minus-btn" onclick="removeItem('3/4&quot CPVC ELBOW')">-</button>
+        <button onclick="addItem('3/4 CPVC ELBOW')">+</button>
+        <button class="minus-btn" onclick="removeItem('3/4 CPVC ELBOW')">-</button>
     </div>
 </div>
 
 <div class="item">
     <span>3/4" CPVC TEE</span>
     <div>
-        <button onclick="addItem('3/4&quot CPVC TEE')">+</button>
-        <button class="minus-btn" onclick="removeItem('3/4&quot CPVC TEE')">-</button>
+        <button onclick="addItem('3/4 CPVC TEE')">+</button>
+        <button class="minus-btn" onclick="removeItem('3/4 CPVC TEE')">-</button>
     </div>
 </div>
 
 <div class="item">
     <span>3/4" CPVC SHOE</span>
     <div>
-        <button onclick="addItem('3/4&quot CPVC SHOE')">+</button>
-        <button class="minus-btn" onclick="removeItem('3/4&quot CPVC SHOE')">-</button>
+        <button onclick="addItem('3/4 CPVC SHOE')">+</button>
+        <button class="minus-btn" onclick="removeItem('3/4 CPVC SHOE')">-</button>
     </div>
 </div>
 
 <div class="item">
     <span>3/4" CPVC STEPOVER BEND</span>
     <div>
-        <button onclick="addItem('3/4&quot CPVC STEPOVER BEND')">+</button>
-        <button class="minus-btn" onclick="removeItem('3/4&quot CPVC STEPOVER BEND')">-</button>
+        <button onclick="addItem('3/4 CPVC STEPOVER BEND')">+</button>
+        <button class="minus-btn" onclick="removeItem('3/4 CPVC STEPOVER BEND')">-</button>
     </div>
 </div>
 
 <div class="item">
     <span>3/4" CPVC UNION</span>
     <div>
-        <button onclick="addItem('3/4&quot CPVC UNION')">+</button>
-        <button class="minus-btn" onclick="removeItem('3/4&quot CPVC UNION')">-</button>
+        <button onclick="addItem('3/4 CPVC UNION')">+</button>
+        <button class="minus-btn" onclick="removeItem('3/4 CPVC UNION')">-</button>
     </div>
 </div>
-
-<!-- FIXED BOTTOM ITEMS -->
 
 <div class="item">
     <span>3/4" CPVC DUMMY</span>
     <div>
-        <button onclick="addItem('3/4&quot CPVC DUMMY')">+</button>
-        <button class="minus-btn" onclick="removeItem('3/4&quot CPVC DUMMY')">-</button>
+        <button onclick="addItem('3/4 CPVC DUMMY')">+</button>
+        <button class="minus-btn" onclick="removeItem('3/4 CPVC DUMMY')">-</button>
     </div>
 </div>
 
 <div class="item">
     <span>3/4" CPVC CLAMP</span>
     <div>
-        <button onclick="addItem('3/4&quot CPVC CLAMP')">+</button>
-        <button class="minus-btn" onclick="removeItem('3/4&quot CPVC CLAMP')">-</button>
+        <button onclick="addItem('3/4 CPVC CLAMP')">+</button>
+        <button class="minus-btn" onclick="removeItem('3/4 CPVC CLAMP')">-</button>
     </div>
 </div>
 
 <div class="item">
     <span>3/4" CPVC STEPCLAMP</span>
     <div>
-        <button onclick="addItem('3/4&quot CPVC STEPCLAMP')">+</button>
-        <button class="minus-btn" onclick="removeItem('3/4&quot CPVC STEPCLAMP')">-</button>
+        <button onclick="addItem('3/4 CPVC STEPCLAMP')">+</button>
+        <button class="minus-btn" onclick="removeItem('3/4 CPVC STEPCLAMP')">-</button>
     </div>
 </div>
 
 <div class="item">
     <span>3/4" CPVC CONCEALED STOPCOCK</span>
     <div>
-        <button onclick="addItem('3/4&quot CPVC CONCEALED STOPCOCK')">+</button>
-        <button class="minus-btn" onclick="removeItem('3/4&quot CPVC CONCEALED STOPCOCK')">-</button>
+        <button onclick="addItem('3/4 CPVC CONCEALED STOPCOCK')">+</button>
+        <button class="minus-btn" onclick="removeItem('3/4 CPVC CONCEALED STOPCOCK')">-</button>
     </div>
 </div>
 
 <div class="item">
     <span>3/4" CPVC BALL VALVE</span>
     <div>
-        <button onclick="addItem('3/4&quot CPVC BALL VALVE')">+</button>
-        <button class="minus-btn" onclick="removeItem('3/4&quot CPVC BALL VALVE')">-</button>
+        <button onclick="addItem('3/4 CPVC BALL VALVE')">+</button>
+        <button class="minus-btn" onclick="removeItem('3/4 CPVC BALL VALVE')">-</button>
     </div>
 </div>
 
 <div class="item">
     <span>3/4" CPVC CUPLING</span>
     <div>
-        <button onclick="addItem('3/4&quot CPVC CUPLING')">+</button>
-        <button class="minus-btn" onclick="removeItem('3/4&quot CPVC CUPLING')">-</button>
+        <button onclick="addItem('3/4 CPVC CUPLING')">+</button>
+        <button class="minus-btn" onclick="removeItem('3/4 CPVC CUPLING')">-</button>
     </div>
 </div>
 
 <div class="item">
     <span>3/4" X 3/4" CONVECTION BUSH</span>
     <div>
-        <button onclick="addItem('3/4&quot X 3/4&quot CONVECTION BUSH')">+</button>
-        <button class="minus-btn" onclick="removeItem('3/4&quot X 3/4&quot CONVECTION BUSH')">-</button>
+        <button onclick="addItem('3/4 X 3/4 CONVECTION BUSH')">+</button>
+        <button class="minus-btn" onclick="removeItem('3/4 X 3/4 CONVECTION BUSH')">-</button>
     </div>
 </div>
 
@@ -269,7 +300,11 @@
 let list = [];
 
 function addItem(name) {
-    let brand = document.getElementById("brandSelect").value;
+    let brand = document.getElementById("brand").value;
+    if (!brand) {
+        alert("Please select a brand first");
+        return;
+    }
     let existing = list.find(x => x.name === name && x.brand === brand);
 
     if (existing) existing.qty += 1;
@@ -279,7 +314,7 @@ function addItem(name) {
 }
 
 function removeItem(name) {
-    let brand = document.getElementById("brandSelect").value;
+    let brand = document.getElementById("brand").value;
     let existing = list.find(x => x.name === name && x.brand === brand);
 
     if (existing) {
@@ -307,37 +342,64 @@ function renderTable() {
     });
 }
 
+
 function downloadPDF() {
     const { jsPDF } = window.jspdf;
     var doc = new jsPDF();
 
-    doc.setFontSize(16);
-    doc.text("PLUMBING FITTINGS - CPVC ITEMS", 14, 20);
+    let date = document.getElementById("date").value || "N/A";
+    let rawSite = document.getElementById("Site").value || "N/A";
+    let site = rawSite !== "N/A" ? rawSite + " site" : "N/A";
+
+    // ===== HEADER =====
+    doc.setFont("helvetica", "bold");
+    doc.setFontSize(20);
+
+    // ===== HEADER (Same font & size for all) =====
+    doc.setFont("helvetica", "bold");
+    doc.setFontSize(14);
+
+    // Title - center
+    doc.text("PLUMBING FITTINGS - CPVC ITEMS", 105, 20, { align: "center" });
+
+    // Date - top right (same line style)
+    doc.text(date, 200, 20, { align: "right" });        
+
+    // Site name - just below title, same font & size
+    doc.text(site, 105, 30, { align: "center" });
+
+
+    // Reset font for table
+    doc.setFont("helvetica", "normal");
+    doc.setFontSize(10);
 
     if (list.length === 0) {
-        doc.text("S. ANBALAGAN", 14, 40);
-        doc.text("9842513183", 14, 48);
+        doc.text("S. ANBALAGAN", 14, 60);
+        doc.text("9842513183", 14, 68);
         doc.save("CPVC_LIST.pdf");
         return;
     }
 
+    // ===== TABLE =====
     doc.autoTable({
-        startY: 30,
+        startY: 40,
         head: [['S.NO', 'ITEM NAME', 'QTY', 'BRAND']],
         body: list.map((row, i) => [i + 1, row.name, row.qty, row.brand]),
-        theme: 'grid'
+        theme: 'grid',
+        styles: { fontSize: 9 }
     });
 
     let finalY = doc.lastAutoTable.finalY + 20;
 
-    doc.setFontSize(12);
+    // ===== FOOTER =====
+    doc.setFontSize(11);
     doc.text("S. ANBALAGAN", 14, finalY);
     doc.text("9842513183", 14, finalY + 8);
 
     doc.save("CPVC_LIST.pdf");
 }
-
 </script>
+
 
 </body>
 </html>
