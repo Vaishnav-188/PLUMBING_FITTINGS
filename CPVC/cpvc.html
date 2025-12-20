@@ -88,7 +88,10 @@
             background: red;
             margin-top: 20px;
             width: 100%;
+        
+        
         }
+        
     </style>
 </head>
 
@@ -115,7 +118,7 @@
 
     <div>
         <label for="site">SITE NAME:</label>
-        <input type="text" id="site" placeholder="Enter site name">
+        <input type="text" id="Site" placeholder="Enter site name">
     </div>
 </div>
 
@@ -349,7 +352,7 @@ function downloadPDF() {
 
     let date = document.getElementById("date").value || "N/A";
     let rawSite = document.getElementById("Site").value || "N/A";
-    let site = rawSite !== "N/A" ? rawSite + " site" : "N/A";
+    let  site = rawSite !== "N/A" ? rawSite + " site" : "N/A";
 
     // ===== HEADER =====
     doc.setFont("helvetica", "bold");
