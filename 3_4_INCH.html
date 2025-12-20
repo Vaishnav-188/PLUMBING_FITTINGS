@@ -69,6 +69,29 @@
             margin-top: 20px;
             width: 100%;
         }
+        .controls {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .controls div {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+        
+        .controls label {
+            font-weight: bold;
+        }
+        
+        .controls input,
+        .controls select {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
     </style>
 </head>
 
@@ -76,13 +99,29 @@
 
 <h2>3/4" UPVC FITTINGS LIST</h2>
 
-<label><b>SELECT BRAND:</b></label>
-<select id="brandSelect">
-    <option value="Finolex">Finolex</option>
-    <option value="Supreme">Supreme</option>
-</select>
+<div class="controls">
+    <div>
+        <label for="brand">SELECT BRAND:</label>
+        <select id="brand">
+            <option value="">-- Select Brand --</option>
+            <option>Finolex</option>
+            <option>Astral</option>
+            <option>Ashirvad</option>
+            <option>Supreme</option>
+        </select>
+    </div>
 
-<br><br>
+    <div>
+        <label for="date">SELECT DATE:</label>
+        <input type="date" id="date">
+    </div>
+
+    <div>
+        <label for="Site">SITE NAME:</label>
+        <input type="text" id="Site" placeholder="Enter site name">
+    </div>
+    </div>
+
 
 <!-- ALL ITEMS CORRECTED BELOW -->
 
@@ -243,7 +282,11 @@
 let list = [];
 
 function addItem(name) {
-    let brand = document.getElementById("brandSelect").value;
+    let brand = document.getElementById("brand").value;
+    if (!brand) {
+        alert("Please select a brand first");
+        return;
+    }
     let existing = list.find(x => x.name === name && x.brand === brand);
 
     if (existing) existing.qty += 1;
@@ -253,7 +296,7 @@ function addItem(name) {
 }
 
 function removeItem(name) {
-    let brand = document.getElementById("brandSelect").value;
+    let brand = document.getElementById("brand").value;
     let existing = list.find(x => x.name === name && x.brand === brand);
 
     if (existing) {
@@ -285,30 +328,48 @@ function downloadPDF() {
     const { jsPDF } = window.jspdf;
     var doc = new jsPDF();
 
-    doc.setFontSize(16);
-    doc.text("PLUMBING FITTINGS - 3/4 INCH UPVC ITEMS", 14, 20);
+    let date = document.getElementById("date").value || "N/A";
+    let rawSite = document.getElementById("Site").value || "N/A";
+    let site = rawSite !== "N/A" ? rawSite + " site" : "N/A";
 
+    // ===== HEADER =====
+    doc.setFont("helvetica", "bold");
+    doc.setFontSize(14);
+
+    doc.text("PLUMBING FITTINGS - UPVC ITEMS", 105, 20, { align: "center" });
+    doc.text(date, 200, 20, { align: "right" });
+    doc.text(site, 105, 30, { align: "center" });
+
+    // If no items selected
     if (list.length === 0) {
-        doc.text("S. ANBALAGAN", 14, 40);
-        doc.text("9842513183", 14, 48);
-        doc.save("UPVC_LIST.pdf");
+        doc.setFontSize(12);
+        doc.text("No items selected", 14, 50);
+        doc.save("3_4_INCH_UPVC_LIST.pdf");
         return;
     }
 
+    // ===== TABLE =====
     doc.autoTable({
-        startY: 30,
+        startY: 40,
         head: [['S.NO', 'ITEM NAME', 'QTY', 'BRAND']],
-        body: list.map((row, i) => [i + 1, row.name, row.qty, row.brand]),
-        theme: 'grid'
+        body: list.map((row, i) => [
+            i + 1,
+            row.name,
+            row.qty,
+            row.brand
+        ]),
+        theme: 'grid',
+        styles: { fontSize: 9 }
     });
 
-    let finalY = doc.lastAutoTable.finalY + 20;
+    let finalY = doc.lastAutoTable.finalY + 15;
 
-    doc.setFontSize(12);
+    // ===== FOOTER =====
+    doc.setFontSize(11);
     doc.text("S. ANBALAGAN", 14, finalY);
-    doc.text("9842513183", 14, finalY + 8);
+    doc.text("9842513183", 14, finalY + 7);
 
-    doc.save("3/4 INCH UPVC_LIST.pdf");
+    doc.save("3_4_INCH_UPVC_LIST.pdf");
 }
 
 </script>
