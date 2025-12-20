@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>2 1/2" INCH PVC ITEMS LIST</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.28/jspdf.plugin.autotable.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            font-family: Arial;
+            padding: 20px;
+        }
+        .item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            margin-bottom: 8px;
+            background: #f7f7f7;
+            padding: 10px;
+            border-radius: 6px;
+        }
+        .item span {
+            flex: 1;
+        }
+        .item div {
+            display: flex;
+            gap: 10px;
+        }
+        .item-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            padding: 12px;
+            flex-wrap: wrap;
+        }
+
+
+        button {
+            padding: 5px 12px;
+            border: none;
+            background: green;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .minus-btn {
+            background: rgb(255, 81, 0);
+            margin-left: 5px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 8px;
+        }
+
+        #downloadBtn {
+            background: red;
+            margin-top: 20px;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+
+<h2>2 1/2" PVC FITTINGS LIST</h2>
+
+<label><b>SELECT BRAND:</b></label>
+<select id="brandSelect">
+    <option value="Finolex">Finolex</option>
+    <option value="Supreme">Supreme</option>
+</select>
+
+<br><br>
+
+<!-- ALL ITEMS CORRECTED BELOW -->
+
+<div class="item">
+    <span>2 1/2" PVC PIPE</span>
+    <div>
+        <button onclick="addItem('2 1/2&quot PVC PIPE')">+</button>
+        <button class="minus-btn" onclick="removeItem('2 1/2&quot PVC PIPE')">-</button>
+    </div>
+</div>
+
+<div class="item">
+    <span>2 1/2" PVC ELBOW</span>
+    <div>
+        <button onclick="addItem('2 1/2&quot PVC ELBOW')">+</button>
+        <button class="minus-btn" onclick="removeItem('2 1/2&quot PVC ELBOW')">-</button>
+    </div>
+</div>
+
+<div class="item">
+    <span>2 1/2" PVC TEE</span>
+    <div>
+        <button onclick="addItem('2 1/2&quot PVC TEE')">+</button>
+        <button class="minus-btn" onclick="removeItem('2 1/2&quot PVC TEE')">-</button>
+    </div>
+</div>
+
+<div class="item">
+    <span>2 1/2" PVC CUPLING</span>
+    <div>
+        <button onclick="addItem('2 1/2&quot PVC CUPLING')">+</button>
+        <button class="minus-btn" onclick="removeItem('2 1/2&quot PVC CUPLING')">-</button>
+    </div>
+</div>
+
+<div class="item">
+    <span>2 1/2" PVC SHOE</span>
+    <div>
+        <button onclick="addItem('2 1/2&quot PVC SHOE')">+</button>
+        <button class="minus-btn" onclick="removeItem('2 1/2&quot PVC SHOE')">-</button>
+    </div>
+</div>
+
+
+<div class="item">
+    <span>2 1/2" END CAP</span>
+    <div>
+        <button onclick="addItem('2 1/2&quot PVC END CAP')">+</button>
+        <button class="minus-btn" onclick="removeItem('2 1/2&quot PVC END CAP')">-</button>
+    </div>
+</div>
+
+<div class="item">
+    <span>2 1/2" PVC DOORTEE</span>
+    <div>
+        <button onclick="addItem('2 1/2&quot PVC DOORTEE')">+</button>
+        <button class="minus-btn" onclick="removeItem('2 1/2&quot PVC DOORTEE')">-</button>
+    </div>
+</div>
+
+<div class="item">
+    <span>2 1/2" PVC DOORELBOW</span>
+    <div>
+        <button onclick="addItem('2 1/2&quot PVC DOORELBOW')">+</button>
+        <button class="minus-btn" onclick="removeItem('2 1/2&quot PVC DOORELBOW')">-</button>
+    </div>
+</div>
+
+<div class="item">
+    <span>2 1/2" END CAP(PASTED)</span>
+    <div>
+        <button onclick="addItem('2 1/2&quot PVC END CAP(PASTED)')">+</button>
+        <button class="minus-btn" onclick="removeItem('2 1/2&quot PVC END CAP(PASTED)')">-</button>
+    </div>
+</div>
+
+<div class="item">
+    <span>2 1/2" PIPE CLAMP</span>
+    <div>
+        <button onclick="addItem('2 1/2&quot PIPE CLAMP')">+</button>
+        <button class="minus-btn" onclick="removeItem('2 1/2&quot PIPE CLAMP')">-</button>
+    </div>
+</div>
+
+<div class="item">
+    <span>2 1/2" STEP CLAMP</span>
+    <div>
+        <button onclick="addItem('2 1/2&quot STEP CLAMP')">+</button>
+        <button class="minus-btn" onclick="removeItem('2 1/2&quot STEP CLAMP')">-</button>
+    </div>
+</div>
+
+
+<div class="item">
+    <span>2 1/2" PVC FULLBEND</span>
+    <div>
+        <button onclick="addItem('2 1/2&quot PVC FULLBEND')">+</button>
+        <button class="minus-btn" onclick="removeItem('2 1/2&quot PVC FULLBEND')">-</button>
+    </div>
+</div>
+
+
+
+<div class="item">
+    <span>2 1/2" PVC LENGTH REPAIR COUPLER</span>
+    <div>
+        <button onclick="addItem('2 1/2&quot PVC LENGTH REPAIR COUPLER')">+</button>
+        <button class="minus-btn" onclick="removeItem('2 1/2&quot PVC LENGTH REPAIR COUPLER')">-</button>
+    </div>
+</div>
+
+<div class="item">
+    <span>2 1/2" PVC STRAIGHT SOCKET DOORTEE</span>
+    <div>
+        <button onclick="addItem('2 1/2&quot PVC STRAIGHT SOCKET DOORTEE')">+</button>
+        <button class="minus-btn" onclick="removeItem('2 1/2&quot PVC STRAIGHT SOCKET DOORTEE')">-</button>
+    </div>
+</div>
+
+
+<div class="item">
+    <span>2 1/2" X 1 1/2" PVC REDUCER</span>
+    <div>
+        <button onclick="addItem('2 1/2&quot X 1 1/2&quot PVC REDUCER')">+</button>
+        <button class="minus-btn" onclick="removeItem('2 1/2&quot X 1 1/2&quot PVC REDUCER')">-</button>
+    </div>
+</div>
+
+
+
+
+
+<h3>SELECTED ITEMS</h3>
+
+<table id="outputTable">
+    <thead>
+        <tr>
+            <th>S.NO</th>
+            <th>ITEM NAME</th>
+            <th>QUANTITY</th>
+            <th>BRAND</th>
+        </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+
+<button id="downloadBtn" onclick="downloadPDF()">Download PDF</button>
+
+<script>
+
+let list = [];
+
+function addItem(name) {
+    let brand = document.getElementById("brandSelect").value;
+    let existing = list.find(x => x.name === name && x.brand === brand);
+
+    if (existing) existing.qty += 1;
+    else list.push({ name, qty: 1, brand });
+
+    renderTable();
+}
+
+function removeItem(name) {
+    let brand = document.getElementById("brandSelect").value;
+    let existing = list.find(x => x.name === name && x.brand === brand);
+
+    if (existing) {
+        existing.qty -= 1;
+        if (existing.qty <= 0) {
+            list = list.filter(x => !(x.name === name && x.brand === brand));
+        }
+    }
+    renderTable();
+}
+
+function renderTable() {
+    const tbody = document.querySelector("#outputTable tbody");
+    tbody.innerHTML = "";
+
+    list.forEach((item, index) => {
+        tbody.innerHTML += `
+            <tr>
+                <td>${index + 1}</td>
+                <td>${item.name}</td>
+                <td>${item.qty}</td>
+                <td>${item.brand}</td>
+            </tr>
+        `;
+    });
+}
+
+function downloadPDF() {
+    const { jsPDF } = window.jspdf;
+    var doc = new jsPDF();
+
+    doc.setFontSize(16);
+    doc.text("PLUMBING FITTINGS - 2 1/2 INCH PVC ITEMS", 14, 20);
+
+    if (list.length === 0) {
+        doc.text("S. ANBALAGAN", 14, 40);
+        doc.text("9842513183", 14, 48);
+        doc.save("2 1/2 PVC_LIST.pdf");
+        return;
+    }
+
+    doc.autoTable({
+        startY: 30,
+        head: [['S.NO', 'ITEM NAME', 'QTY', 'BRAND']],
+        body: list.map((row, i) => [i + 1, row.name, row.qty, row.brand]),
+        theme: 'grid'
+    });
+
+    let finalY = doc.lastAutoTable.finalY + 20;
+
+    doc.setFontSize(12);
+    doc.text("S. ANBALAGAN", 14, finalY);
+    doc.text("9842513183", 14, finalY + 8);
+
+    doc.save("2 1/2 INCH PVC_LIST.pdf");
+}
+
+</script>
+
+</body>
+</html>
