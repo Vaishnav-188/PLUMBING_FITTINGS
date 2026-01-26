@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CPVC ITEMS LIST</title>
+
+    <!-- Shared Styles -->
+    <link rel="stylesheet" href="../style.css">
+
+    <!-- PDF Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.28/jspdf.plugin.autotable.min.js"></script>
+</head>
+
+<body>
+
+    <!-- Navbar injected by common.js -->
+
+    <div class="container">
+        <h2>CPVC FITTINGS LIST</h2>
+
+        <div class="controls">
+            <div class="control-group">
+                <label for="brand">SELECT BRAND:</label>
+                <select id="brand">
+                    <option value="">-- Select Brand --</option>
+                    <option>Finolex</option>
+                    <option>Astral</option>
+                    <option>Ashirvad</option>
+                    <option>Supreme</option>
+                </select>
+            </div>
+
+        </div>
+
+        <div class="item-list">
+            <div class="item-row">
+                <span class="item-name">3/4" CPVC PIPE SDR-11 (5M)</span>
+                <div class="item-actions">
+                    <button class="btn btn-add" onclick="addItem('3/4&quot; CPVC PIPE SDR-11 (5M)')">+</button>
+                    <button class="btn btn-remove" onclick="removeItem('3/4&quot; CPVC PIPE SDR-11 (5M)')">-</button>
+                </div>
+            </div>
+
+            <div class="item-row">
+                <span class="item-name">3/4" CPVC PIPE SDR-11 (3M)</span>
+                <div class="item-actions">
+                    <button class="btn btn-add" onclick="addItem('3/4&quot; CPVC PIPE SDR-11 (3M)')">+</button>
+                    <button class="btn btn-remove" onclick="removeItem('3/4&quot; CPVC PIPE SDR-11 (3M)')">-</button>
+                </div>
+            </div>
+
+            <div class="item-row">
+                <span class="item-name">3/4" X 1/2" CPVC BRASS THREADED ELBOW</span>
+                <div class="item-actions">
+                    <button class="btn btn-add"
+                        onclick="addItem('3/4&quot; X 1/2&quot; CPVC BRASS THREADED ELBOW')">+</button>
+                    <button class="btn btn-remove"
+                        onclick="removeItem('3/4&quot; X 1/2&quot; CPVC BRASS THREADED ELBOW')">-</button>
+                </div>
+            </div>
+
+            <div class="item-row">
+                <span class="item-name">3/4" X 1/2" CPVC THREADED REDUCER</span>
+                <div class="item-actions">
+                    <button class="btn btn-add"
+                        onclick="addItem('3/4&quot; X 1/2&quot; CPVC THREADED REDUCER')">+</button>
+                    <button class="btn btn-remove"
+                        onclick="removeItem('3/4&quot; X 1/2&quot; CPVC THREADED REDUCER')">-</button>
+                </div>
+            </div>
+
+            <div class="item-row">
+                <span class="item-name">3/4" X 1/2" CPVC THREADED TEE</span>
+                <div class="item-actions">
+                    <button class="btn btn-add" onclick="addItem('3/4&quot; X 1/2&quot; CPVC THREADED TEE')">+</button>
+                    <button class="btn btn-remove"
+                        onclick="removeItem('3/4&quot; X 1/2&quot; CPVC THREADED TEE')">-</button>
+                </div>
+            </div>
+
+            <div class="item-row">
+                <span class="item-name">3/4" X 1/2" CPVC BRASS MTA</span>
+                <div class="item-actions">
+                    <button class="btn btn-add" onclick="addItem('3/4&quot; X 1/2&quot; CPVC BRASS MTA')">+</button>
+                    <button class="btn btn-remove"
+                        onclick="removeItem('3/4&quot; X 1/2&quot; CPVC BRASS MTA')">-</button>
+                </div>
+            </div>
+
+            <div class="item-row">
+                <span class="item-name">3/4" CPVC BRASS MTA</span>
+                <div class="item-actions">
+                    <button class="btn btn-add" onclick="addItem('3/4&quot; CPVC BRASS MTA')">+</button>
+                    <button class="btn btn-remove" onclick="removeItem('3/4&quot; CPVC BRASS MTA')">-</button>
+                </div>
+            </div>
+
+            <div class="item-row">
+                <span class="item-name">3/4" CPVC MTA</span>
+                <div class="item-actions">
+                    <button class="btn btn-add" onclick="addItem('3/4&quot; CPVC MTA')">+</button>
+                    <button class="btn btn-remove" onclick="removeItem('3/4&quot; CPVC MTA')">-</button>
+                </div>
+            </div>
+
+            <div class="item-row">
+                <span class="item-name">3/4" CPVC ELBOW</span>
+                <div class="item-actions">
+                    <button class="btn btn-add" onclick="addItem('3/4&quot; CPVC ELBOW')">+</button>
+                    <button class="btn btn-remove" onclick="removeItem('3/4&quot; CPVC ELBOW')">-</button>
+                </div>
+            </div>
+
+            <div class="item-row">
+                <span class="item-name">3/4" CPVC TEE</span>
+                <div class="item-actions">
+                    <button class="btn btn-add" onclick="addItem('3/4&quot; CPVC TEE')">+</button>
+                    <button class="btn btn-remove" onclick="removeItem('3/4&quot; CPVC TEE')">-</button>
+                </div>
+            </div>
+
+            <div class="item-row">
+                <span class="item-name">3/4" CPVC SHOE</span>
+                <div class="item-actions">
+                    <button class="btn btn-add" onclick="addItem('3/4&quot; CPVC SHOE')">+</button>
+                    <button class="btn btn-remove" onclick="removeItem('3/4&quot; CPVC SHOE')">-</button>
+                </div>
+            </div>
+
+            <div class="item-row">
+                <span class="item-name">3/4" CPVC STEPOVER BEND</span>
+                <div class="item-actions">
+                    <button class="btn btn-add" onclick="addItem('3/4&quot; CPVC STEPOVER BEND')">+</button>
+                    <button class="btn btn-remove" onclick="removeItem('3/4&quot; CPVC STEPOVER BEND')">-</button>
+                </div>
+            </div>
+
+            <div class="item-row">
+                <span class="item-name">3/4" CPVC UNION</span>
+                <div class="item-actions">
+                    <button class="btn btn-add" onclick="addItem('3/4&quot; CPVC UNION')">+</button>
+                    <button class="btn btn-remove" onclick="removeItem('3/4&quot; CPVC UNION')">-</button>
+                </div>
+            </div>
+
+            <div class="item-row">
+                <span class="item-name">3/4" CPVC DUMMY</span>
+                <div class="item-actions">
+                    <button class="btn btn-add" onclick="addItem('3/4&quot; CPVC DUMMY')">+</button>
+                    <button class="btn btn-remove" onclick="removeItem('3/4&quot; CPVC DUMMY')">-</button>
+                </div>
+            </div>
+
+            <div class="item-row">
+                <span class="item-name">3/4" CPVC CLAMP</span>
+                <div class="item-actions">
+                    <button class="btn btn-add" onclick="addItem('3/4&quot; CPVC CLAMP')">+</button>
+                    <button class="btn btn-remove" onclick="removeItem('3/4&quot; CPVC CLAMP')">-</button>
+                </div>
+            </div>
+
+            <div class="item-row">
+                <span class="item-name">3/4" CPVC STEPCLAMP</span>
+                <div class="item-actions">
+                    <button class="btn btn-add" onclick="addItem('3/4&quot; CPVC STEPCLAMP')">+</button>
+                    <button class="btn btn-remove" onclick="removeItem('3/4&quot; CPVC STEPCLAMP')">-</button>
+                </div>
+            </div>
+
+            <div class="item-row">
+                <span class="item-name">3/4" CPVC CONCEALED STOPCOCK</span>
+                <div class="item-actions">
+                    <button class="btn btn-add" onclick="addItem('3/4&quot; CPVC CONCEALED STOPCOCK')">+</button>
+                    <button class="btn btn-remove" onclick="removeItem('3/4&quot; CPVC CONCEALED STOPCOCK')">-</button>
+                </div>
+            </div>
+
+            <div class="item-row">
+                <span class="item-name">3/4" CPVC BALL VALVE</span>
+                <div class="item-actions">
+                    <button class="btn btn-add" onclick="addItem('3/4&quot; CPVC BALL VALVE')">+</button>
+                    <button class="btn btn-remove" onclick="removeItem('3/4&quot; CPVC BALL VALVE')">-</button>
+                </div>
+            </div>
+
+            <div class="item-row">
+                <span class="item-name">3/4" CPVC CUPLING</span>
+                <div class="item-actions">
+                    <button class="btn btn-add" onclick="addItem('3/4&quot; CPVC CUPLING')">+</button>
+                    <button class="btn btn-remove" onclick="removeItem('3/4&quot; CPVC CUPLING')">-</button>
+                </div>
+            </div>
+
+            <div class="item-row">
+                <span class="item-name">3/4" X 3/4" CONVECTION BUSH</span>
+                <div class="item-actions">
+                    <button class="btn btn-add" onclick="addItem('3/4&quot; X 3/4&quot; CONVECTION BUSH')">+</button>
+                    <button class="btn btn-remove"
+                        onclick="removeItem('3/4&quot; X 3/4&quot; CONVECTION BUSH')">-</button>
+                </div>
+            </div>
+
+        </div>
+
+        <h3>Your Selected Items</h3>
+        <table id="outputTable">
+            <thead>
+                <tr>
+                    <th>S.NO</th>
+                    <th>ITEM NAME</th>
+                    <th>QUANTITY</th>
+                    <th>BRAND</th>
+                    <th>ACTION</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+
+        <!-- Optional: Link to Main List -->
+        <div style="margin-top: 20px; text-align: right;">
+            <a href="../index.html" class="btn btn-add" style="text-decoration:none; background:#004d80;">Go to Combined
+                List &gt;&gt;</a>
+        </div>
+    </div>
+
+    <footer>
+        Name: <span>S.Anbalagan</span> <br>Contact: <span>98425 13183</span> <br>
+        © 2025 All Rights Reserved.
+    </footer>
+
+    <!-- Shared Logic -->
+    <script src="../common.js"></script>
+
+</body>
+
+</html>

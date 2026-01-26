@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plumbing Fittings - Master List</title>
+    <!-- Use Shared CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- PDF Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.28/jspdf.plugin.autotable.min.js"></script>
+</head>
+
+<body>
+
+    <!-- Navbar will be injected here by common.js -->
+
+    <div class="container">
+        <h1>Combined Selected Items List</h1>
+
+
+        <!-- CONTROLS FOR PDF (Optional global overrides) -->
+        <div class="controls">
+            <div class="control-group">
+                <label for="date">Date:</label>
+                <input type="date" id="date">
+            </div>
+            <div class="control-group">
+                <label for="Site">Site Name:</label>
+                <input type="text" id="Site" placeholder="Enter site name">
+            </div>
+            <div class="control-group">
+                <button class="btn btn-add" style="background:#004d80" onclick="downloadCombinedPDF()">Download Combined
+                    PDF</button>
+            </div>
+            <div class="control-group">
+                <button class="btn btn-remove" onclick="clearCart()">Clear Final List</button>
+            </div>
+        </div>
+
+        <table id="outputTable">
+            <thead>
+                <tr>
+                    <th>S.NO</th>
+                    <th>ITEM NAME</th>
+                    <th>QUANTITY</th>
+                    <th>BRAND</th>
+                    <th>ACTION</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Rows injected by common.js -->
+            </tbody>
+        </table>
+
+    </div>
+
+    <footer>
+        Name: <span>S.Anbalagan</span> <br>Contact: <span>98425 13183</span> <br>
+        © 2025 All Rights Reserved.
+    </footer>
+
+    <!-- Shared Logic -->
+    <script src="common.js"></script>
+
+    <script>
+        // Additional Logic specific to Index page
+
+        function clearCart() {
+            if (confirm("Are you sure you want to clear the entire list?")) {
+                localStorage.removeItem('plumbing_cart_v1');
+                location.reload();
+            }
+        }
+
+        function downloadCombinedPDF() {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+
+            const date = document.getElementById("date").value || "N/A";
+            const rawSite = document.getElementById("Site").value || "";
+            const site = rawSite ? rawSite + " site" : "N/A";
+
+            // -- Header --
+            doc.setFont("helvetica", "bold");
+            doc.setFontSize(18);
+            doc.text("PLUMBING FITTINGS - COMBINED LIST", 105, 20, { align: "center" });
+
+            doc.setFontSize(12);
+            doc.text(`Date: ${date}`, 200, 30, { align: "right" });
+            doc.text(`Site: ${site}`, 14, 30);
+
+            // -- Table --
+            // We get the data from localStorage directly to be safe
+            const cart = JSON.parse(localStorage.getItem('plumbing_cart_v1') || "[]");
+
+            const tableBody = cart.map((item, index) => [
+                index + 1,
+                item.name,
+                item.qty,
+                item.brand ? item.brand : "-"
+            ]);
+
+            doc.autoTable({
+                startY: 40,
+                head: [['S.NO', 'ITEM NAME', 'QTY', 'BRAND']],
+                body: tableBody,
+                theme: 'grid',
+                styles: { fontSize: 10 }
+            });
+
+            // -- Footer --
+            const finalY = doc.lastAutoTable.finalY + 20;
+            doc.text("S. ANBALAGAN", 14, finalY);
+            doc.text("9842513183", 14, finalY + 7);
+
+            doc.save("Combined_Fittings_List.pdf");
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EXTRA FITTINGS ITEMS LIST</title>
+
+    <!-- Shared Styles -->
+    <link rel="stylesheet" href="../style.css">
+
+    <!-- PDF Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.28/jspdf.plugin.autotable.min.js"></script>
+</head>
+
+<body>
+
+    <!-- Navbar injected by common.js -->
+
+    <div class="container">
+        <h2>EXTRA ITEMS FITTINGS LIST</h2>
+
+        <div class="controls">
+
+
+        </div>
+
+        <div class="item-list">
+            <div class="item-row">
+                <span class="item-name">CPVC PASTE (118 ML)</span>
+                <div class="item-actions">
+                    <button class="btn btn-add" onclick="addItem('CPVC PASTE (118 ML)')">+</button>
+                    <button class="btn btn-remove" onclick="removeItem('CPVC PASTE (118 ML)')">-</button>
+                </div>
+            </div>
+
+            <div class="item-row">
+                <span class="item-name">UPVC PASTE (118 ML)</span>
+                <div class="item-actions">
+                    <button class="btn btn-add" onclick="addItem('UPVC PASTE (118 ML)')">+</button>
+                    <button class="btn btn-remove" onclick="removeItem('UPVC PASTE (118 ML)')">-</button>
+                </div>
+            </div>
+
+            <div class="item-row">
+                <span class="item-name">PVC PASTE 1/4" LITRE</span>
+                <div class="item-actions">
+                    <button class="btn btn-add" onclick="addItem('PVC PASTE 1/4&quot; LITRE')">+</button>
+                    <button class="btn btn-remove" onclick="removeItem('PVC PASTE 1/4&quot; LITRE')">-</button>
+                </div>
+            </div>
+
+            <div class="item-row">
+                <span class="item-name">M-SEAL (100G)</span>
+                <div class="item-actions">
+                    <button class="btn btn-add" onclick="addItem('M-SEAL (100G)')">+</button>
+                    <button class="btn btn-remove" onclick="removeItem('M-SEAL (100G)')">-</button>
+                </div>
+            </div>
+
+            <div class="item-row">
+                <span class="item-name">BLACK BINDING WIRE</span>
+                <div class="item-actions">
+                    <button class="btn btn-add" onclick="addItem('BLACK BINDING WIRE')">+</button>
+                    <button class="btn btn-remove" onclick="removeItem('BLACK BINDING WIRE')">-</button>
+                </div>
+            </div>
+
+            <div class="item-row">
+                <span class="item-name">1 1/2" SS NAILS</span>
+                <div class="item-actions">
+                    <button class="btn btn-add" onclick="addItem('1 1/2&quot; SS NAILS')">+</button>
+                    <button class="btn btn-remove" onclick="removeItem('1 1/2&quot; SS NAILS')">-</button>
+                </div>
+            </div>
+
+            <div class="item-row">
+                <span class="item-name">1" SS NAILS</span>
+                <div class="item-actions">
+                    <button class="btn btn-add" onclick="addItem('1&quot; SS NAILS')">+</button>
+                    <button class="btn btn-remove" onclick="removeItem('1&quot; SS NAILS')">-</button>
+                </div>
+            </div>
+
+            <div class="item-row">
+                <span class="item-name">2 1/2" SS NAILS</span>
+                <div class="item-actions">
+                    <button class="btn btn-add" onclick="addItem('2 1/2&quot; SS NAILS')">+</button>
+                    <button class="btn btn-remove" onclick="removeItem('2 1/2&quot; SS NAILS')">-</button>
+                </div>
+            </div>
+
+            <div class="item-row">
+                <span class="item-name">CLOTH WASTE</span>
+                <div class="item-actions">
+                    <button class="btn btn-add" onclick="addItem('CLOTH WASTE')">+</button>
+                    <button class="btn btn-remove" onclick="removeItem('CLOTH WASTE')">-</button>
+                </div>
+            </div>
+
+            <div class="item-row">
+                <span class="item-name">INSULATION TAPE</span>
+                <div class="item-actions">
+                    <button class="btn btn-add" onclick="addItem('INSULATION TAPE')">+</button>
+                    <button class="btn btn-remove" onclick="removeItem('INSULATION TAPE')">-</button>
+                </div>
+            </div>
+
+            <div class="item-row">
+                <span class="item-name">PACKING TAPE</span>
+                <div class="item-actions">
+                    <button class="btn btn-add" onclick="addItem('PACKING TAPE')">+</button>
+                    <button class="btn btn-remove" onclick="removeItem('PACKING TAPE')">-</button>
+                </div>
+            </div>
+
+            <div class="item-row">
+                <span class="item-name">1" HACKSAW BLADE</span>
+                <div class="item-actions">
+                    <button class="btn btn-add" onclick="addItem('1&quot; HACKSAW BLADE')">+</button>
+                    <button class="btn btn-remove" onclick="removeItem('1&quot; HACKSAW BLADE')">-</button>
+                </div>
+            </div>
+
+            <div class="item-row">
+                <span class="item-name">3/4" TEFLON TAPE</span>
+                <div class="item-actions">
+                    <button class="btn btn-add" onclick="addItem('3/4&quot; TEFLON TAPE')">+</button>
+                    <button class="btn btn-remove" onclick="removeItem('3/4&quot; TEFLON TAPE')">-</button>
+                </div>
+            </div>
+
+        </div>
+
+        <h3>Your Selected Items</h3>
+        <table id="outputTable">
+            <thead>
+                <tr>
+                    <th>S.NO</th>
+                    <th>ITEM NAME</th>
+                    <th>QUANTITY</th>
+                    <th>BRAND</th>
+                    <th>ACTION</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+
+        <div style="margin-top: 20px; text-align: right;">
+            <a href="../index.html" class="btn btn-add" style="text-decoration:none; background:#004d80;">Go to Combined
+                List &gt;&gt;</a>
+        </div>
+    </div>
+
+    <footer>
+        Name: <span>S.Anbalagan</span> <br>Contact: <span>98425 13183</span> <br>
+        © 2025 All Rights Reserved.
+    </footer>
+
+    <!-- Shared Logic -->
+    <script src="../common.js"></script>
+
+</body>
+
+</html>

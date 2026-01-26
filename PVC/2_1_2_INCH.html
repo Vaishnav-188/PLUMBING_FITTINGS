@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2 1/2" INCH PVC ITEMS LIST</title>
+
+    <!-- Shared Styles -->
+    <link rel="stylesheet" href="../style.css">
+
+    <!-- PDF Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.28/jspdf.plugin.autotable.min.js"></script>
+</head>
+
+<body>
+
+    <!-- Navbar injected by common.js -->
+
+    <div class="container">
+        <h2>2 1/2" PVC FITTINGS LIST</h2>
+
+        <div class="controls">
+            <div class="control-group">
+                <label for="brand">SELECT BRAND:</label>
+                <select id="brand">
+                    <option value="">-- Select Brand --</option>
+                    <option>Finolex</option>
+                    <option>Astral</option>
+                    <option>Ashirvad</option>
+                    <option>Supreme</option>
+                </select>
+            </div>
+
+        </div>
+
+        <div class="item-list">
+            <div class="item-row">
+                <span class="item-name">2 1/2" PVC PIPE</span>
+                <div class="item-actions">
+                    <button class="btn btn-add" onclick="addItem('2 1/2&quot; PVC PIPE')">+</button>
+                    <button class="btn btn-remove" onclick="removeItem('2 1/2&quot; PVC PIPE')">-</button>
+                </div>
+            </div>
+
+            <div class="item-row">
+                <span class="item-name">2 1/2" PVC ELBOW</span>
+                <div class="item-actions">
+                    <button class="btn btn-add" onclick="addItem('2 1/2&quot; PVC ELBOW')">+</button>
+                    <button class="btn btn-remove" onclick="removeItem('2 1/2&quot; PVC ELBOW')">-</button>
+                </div>
+            </div>
+
+            <div class="item-row">
+                <span class="item-name">2 1/2" PVC TEE</span>
+                <div class="item-actions">
+                    <button class="btn btn-add" onclick="addItem('2 1/2&quot; PVC TEE')">+</button>
+                    <button class="btn btn-remove" onclick="removeItem('2 1/2&quot; PVC TEE')">-</button>
+                </div>
+            </div>
+
+            <div class="item-row">
+                <span class="item-name">2 1/2" PVC CUPLING</span>
+                <div class="item-actions">
+                    <button class="btn btn-add" onclick="addItem('2 1/2&quot; PVC CUPLING')">+</button>
+                    <button class="btn btn-remove" onclick="removeItem('2 1/2&quot; PVC CUPLING')">-</button>
+                </div>
+            </div>
+
+            <div class="item-row">
+                <span class="item-name">2 1/2" PVC SHOE</span>
+                <div class="item-actions">
+                    <button class="btn btn-add" onclick="addItem('2 1/2&quot; PVC SHOE')">+</button>
+                    <button class="btn btn-remove" onclick="removeItem('2 1/2&quot; PVC SHOE')">-</button>
+                </div>
+            </div>
+
+
+            <div class="item-row">
+                <span class="item-name">2 1/2" END CAP</span>
+                <div class="item-actions">
+                    <button class="btn btn-add" onclick="addItem('2 1/2&quot; PVC END CAP')">+</button>
+                    <button class="btn btn-remove" onclick="removeItem('2 1/2&quot; PVC END CAP')">-</button>
+                </div>
+            </div>
+
+            <div class="item-row">
+                <span class="item-name">2 1/2" PVC DOORTEE</span>
+                <div class="item-actions">
+                    <button class="btn btn-add" onclick="addItem('2 1/2&quot; PVC DOORTEE')">+</button>
+                    <button class="btn btn-remove" onclick="removeItem('2 1/2&quot; PVC DOORTEE')">-</button>
+                </div>
+            </div>
+
+            <div class="item-row">
+                <span class="item-name">2 1/2" PVC DOORELBOW</span>
+                <div class="item-actions">
+                    <button class="btn btn-add" onclick="addItem('2 1/2&quot; PVC DOORELBOW')">+</button>
+                    <button class="btn btn-remove" onclick="removeItem('2 1/2&quot; PVC DOORELBOW')">-</button>
+                </div>
+            </div>
+
+            <div class="item-row">
+                <span class="item-name">2 1/2" END CAP(PASTED)</span>
+                <div class="item-actions">
+                    <button class="btn btn-add" onclick="addItem('2 1/2&quot; PVC END CAP(PASTED)')">+</button>
+                    <button class="btn btn-remove" onclick="removeItem('2 1/2&quot; PVC END CAP(PASTED)')">-</button>
+                </div>
+            </div>
+
+            <div class="item-row">
+                <span class="item-name">2 1/2" PIPE CLAMP</span>
+                <div class="item-actions">
+                    <button class="btn btn-add" onclick="addItem('2 1/2&quot; PIPE CLAMP')">+</button>
+                    <button class="btn btn-remove" onclick="removeItem('2 1/2&quot; PIPE CLAMP')">-</button>
+                </div>
+            </div>
+
+            <div class="item-row">
+                <span class="item-name">2 1/2" STEP CLAMP</span>
+                <div class="item-actions">
+                    <button class="btn btn-add" onclick="addItem('2 1/2&quot; STEP CLAMP')">+</button>
+                    <button class="btn btn-remove" onclick="removeItem('2 1/2&quot; STEP CLAMP')">-</button>
+                </div>
+            </div>
+
+
+            <div class="item-row">
+                <span class="item-name">2 1/2" PVC FULLBEND</span>
+                <div class="item-actions">
+                    <button class="btn btn-add" onclick="addItem('2 1/2&quot; PVC FULLBEND')">+</button>
+                    <button class="btn btn-remove" onclick="removeItem('2 1/2&quot; PVC FULLBEND')">-</button>
+                </div>
+            </div>
+
+            <div class="item-row">
+                <span class="item-name">2 1/2" PVC LENGTH REPAIR COUPLER</span>
+                <div class="item-actions">
+                    <button class="btn btn-add" onclick="addItem('2 1/2&quot; PVC LENGTH REPAIR COUPLER')">+</button>
+                    <button class="btn btn-remove"
+                        onclick="removeItem('2 1/2&quot; PVC LENGTH REPAIR COUPLER')">-</button>
+                </div>
+            </div>
+
+            <div class="item-row">
+                <span class="item-name">2 1/2" PVC STRAIGHT SOCKET DOORTEE</span>
+                <div class="item-actions">
+                    <button class="btn btn-add" onclick="addItem('2 1/2&quot; PVC STRAIGHT SOCKET DOORTEE')">+</button>
+                    <button class="btn btn-remove"
+                        onclick="removeItem('2 1/2&quot; PVC STRAIGHT SOCKET DOORTEE')">-</button>
+                </div>
+            </div>
+
+
+            <div class="item-row">
+                <span class="item-name">2 1/2" X 1 1/2" PVC REDUCER</span>
+                <div class="item-actions">
+                    <button class="btn btn-add" onclick="addItem('2 1/2&quot; X 1 1/2&quot; PVC REDUCER')">+</button>
+                    <button class="btn btn-remove"
+                        onclick="removeItem('2 1/2&quot; X 1 1/2&quot; PVC REDUCER')">-</button>
+                </div>
+            </div>
+
+        </div>
+
+        <h3>Your Selected Items</h3>
+        <table id="outputTable">
+            <thead>
+                <tr>
+                    <th>S.NO</th>
+                    <th>ITEM NAME</th>
+                    <th>QUANTITY</th>
+                    <th>BRAND</th>
+                    <th>ACTION</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+
+        <div style="margin-top: 20px; text-align: right;">
+            <a href="../index.html" class="btn btn-add" style="text-decoration:none; background:#004d80;">Go to Combined
+                List &gt;&gt;</a>
+        </div>
+    </div>
+
+    <footer>
+        Name: <span>S.Anbalagan</span> <br>Contact: <span>98425 13183</span> <br>
+        © 2025 All Rights Reserved.
+    </footer>
+
+    <!-- Shared Logic -->
+    <script src="../common.js"></script>
+
+</body>
+
+</html>
